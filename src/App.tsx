@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import NavBar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
+import AboutTechSection from "./components/AboutTechSection";
+import OurProducts from "./components/OurProducts";
+import HowItWorks from "./components/HowItWorks";
+import Footer from "./components/Footer";
 import "./App.css";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import ToDoInput from "./Components/ToDoInput";
-import ToDoItem from "./Components/ToDoItem";
-import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import KeyFeatures from "./components/KeyFeatures";
 
 function App() {
-  // useState to manage INPUT and TODOS
-  const [todos, setTodos] = useState([] as string[]);
-
   return (
     <div className="App">
-      <Header />
-      <ToDoInput todos={todos} setTodos={setTodos} />
-      <Footer todos={todos} setTodos={setTodos} />
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <HeroSection />
+        <AboutTechSection />
+        <KeyFeatures />
+        <OurProducts />
+        <HowItWorks />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
